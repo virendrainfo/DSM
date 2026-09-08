@@ -1,0 +1,5217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DailySolidMedia | Social Media & Promotion</title>
+
+<meta
+    name="description"
+    content="DailySolidMedia - Official social media presence, media promotion and business collaboration."
+>
+<meta name="theme-color" content="#07111f">
+
+<meta property="og:title" content="DailySolidMedia">
+<meta
+    property="og:description"
+    content="Official DailySolidMedia social media and promotion platform."
+>
+<meta property="og:type" content="website">
+
+<link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230078ff'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='48' fill='white' font-family='Arial' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E"
+>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,
+    BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#050b14;
+    color:#fff;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+body.light{
+    background:#f5f8fc;
+    color:#101923;
+}
+
+body.no-scroll{
+    overflow:hidden;
+}
+
+button,input,select,textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+::selection{
+    background:#0784ff;
+    color:#fff;
+}
+
+/* BACKGROUND */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 15% 15%,rgba(0,123,255,.16),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(0,190,255,.10),transparent 28%),
+        linear-gradient(135deg,#030812,#071321 50%,#030812);
+}
+
+body.light .background{
+    background:
+        radial-gradient(circle at 15% 15%,rgba(0,123,255,.09),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(0,190,255,.07),transparent 28%),
+        linear-gradient(135deg,#f8fbff,#edf4fb);
+}
+
+.grid{
+    position:absolute;
+    inset:0;
+    opacity:.13;
+    background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:60px 60px;
+}
+
+body.light .grid{
+    background-image:
+        linear-gradient(rgba(0,70,130,.06) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,70,130,.06) 1px,transparent 1px);
+}
+
+.orb{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.orb.one{
+    width:280px;
+    height:280px;
+    left:-100px;
+    top:8%;
+    background:rgba(0,123,255,.10);
+    animation:float1 14s ease-in-out infinite alternate;
+}
+
+.orb.two{
+    width:320px;
+    height:320px;
+    right:-130px;
+    top:40%;
+    background:rgba(0,200,255,.08);
+    animation:float2 17s ease-in-out infinite alternate;
+}
+
+.orb.three{
+    width:250px;
+    height:250px;
+    left:40%;
+    bottom:-130px;
+    background:rgba(90,80,255,.07);
+    animation:float3 16s ease-in-out infinite alternate;
+}
+
+@keyframes float1{
+    to{transform:translate(45px,35px)}
+}
+
+@keyframes float2{
+    to{transform:translate(-45px,-30px)}
+}
+
+@keyframes float3{
+    to{transform:translate(35px,-30px)}
+}
+
+/* TOP CONTROLS */
+
+.top-controls{
+    position:fixed;
+    top:16px;
+    left:16px;
+    right:16px;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    pointer-events:none;
+}
+
+.top-left,
+.top-right{
+    display:flex;
+    gap:8px;
+    pointer-events:auto;
+}
+
+.icon-btn{
+    width:46px;
+    height:46px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:14px;
+    background:rgba(7,18,31,.82);
+    color:#fff;
+    display:grid;
+    place-items:center;
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+body.light .icon-btn{
+    background:rgba(255,255,255,.88);
+    color:#101923;
+    border-color:rgba(0,50,100,.10);
+}
+
+.icon-btn:hover{
+    transform:translateY(-2px);
+    border-color:rgba(0,145,255,.40);
+}
+
+.icon-btn:active{
+    transform:scale(.95);
+}
+
+.menu-icon{
+    width:21px;
+    height:16px;
+    position:relative;
+}
+
+.menu-icon span{
+    position:absolute;
+    left:0;
+    width:100%;
+    height:2px;
+    background:currentColor;
+    border-radius:3px;
+    transition:.25s ease;
+}
+
+.menu-icon span:nth-child(1){top:0}
+.menu-icon span:nth-child(2){top:7px}
+.menu-icon span:nth-child(3){top:14px}
+
+.menu-open .menu-icon span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+
+.menu-open .menu-icon span:nth-child(2){
+    opacity:0;
+}
+
+.menu-open .menu-icon span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+}
+
+/* SIDE MENU */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    z-index:900;
+    background:rgba(0,0,0,.55);
+    opacity:0;
+    visibility:hidden;
+    transition:.25s ease;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.side-menu{
+    position:fixed;
+    z-index:950;
+    top:0;
+    left:0;
+    width:min(320px,88vw);
+    height:100dvh;
+    padding:82px 18px 25px;
+    overflow-y:auto;
+    background:#081522;
+    border-right:1px solid rgba(255,255,255,.10);
+    transform:translateX(-105%);
+    transition:transform .32s cubic-bezier(.2,.8,.2,1);
+}
+
+body.light .side-menu{
+    background:#fff;
+    border-right-color:rgba(0,40,80,.10);
+}
+
+.side-menu.active{
+    transform:translateX(0);
+}
+
+.menu-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:0 7px;
+    margin-bottom:24px;
+}
+
+.menu-brand-logo{
+    width:43px;
+    height:43px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#007bff,#00b9ed);
+    font-weight:900;
+    box-shadow:0 8px 25px rgba(0,123,255,.22);
+}
+
+.menu-brand strong{
+    font-size:15px;
+}
+
+.menu-brand small{
+    display:block;
+    color:#8195aa;
+    font-size:10px;
+}
+
+.menu-links{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.menu-link{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:#aebfd0;
+    text-align:left;
+    padding:13px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:.2s ease;
+}
+
+body.light .menu-link{
+    color:#617184;
+}
+
+.menu-link:hover,
+.menu-link.active{
+    background:rgba(0,123,255,.11);
+    color:#fff;
+    transform:translateX(3px);
+}
+
+body.light .menu-link:hover,
+body.light .menu-link.active{
+    color:#0072df;
+}
+
+.menu-link span:first-child{
+    width:25px;
+    text-align:center;
+}
+
+/* MAIN */
+
+main{
+    position:relative;
+}
+
+section{
+    width:min(1120px,calc(100% - 36px));
+    margin:auto;
+    padding:90px 0;
+    scroll-margin-top:70px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding-top:100px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.profile-wrap{
+    width:116px;
+    height:116px;
+    margin:0 auto 24px;
+    position:relative;
+}
+
+.profile-ring{
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    background:conic-gradient(#007bff,#00c8ff,#5964ff,#007bff);
+    animation:spin 8s linear infinite;
+}
+
+.profile{
+    position:absolute;
+    inset:4px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#071421;
+    border:3px solid #07111e;
+    font-size:43px;
+    font-weight:900;
+}
+
+body.light .profile{
+    background:#edf5fc;
+    border-color:#fff;
+    color:#0879e9;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+.verified{
+    position:absolute;
+    right:-4px;
+    bottom:2px;
+    width:29px;
+    height:29px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#087df5;
+    border:3px solid #07111e;
+    font-size:12px;
+}
+
+body.light .verified{
+    border-color:#fff;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:6px 12px;
+    border-radius:50px;
+    border:1px solid rgba(0,150,255,.25);
+    background:rgba(0,123,255,.08);
+    color:#82d5ff;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.5px;
+    margin-bottom:16px;
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#00c8ff;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        opacity:.45;
+        transform:scale(.7);
+    }
+}
+
+.hero h1{
+    font-size:clamp(40px,8vw,80px);
+    line-height:1;
+    letter-spacing:-3px;
+    font-weight:900;
+    margin-bottom:19px;
+    background:linear-gradient(100deg,#fff,#75caff,#fff);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:shine 7s linear infinite;
+}
+
+body.light .hero h1{
+    background:linear-gradient(100deg,#101923,#0078e8,#101923);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+}
+
+@keyframes shine{
+    to{background-position:200% center}
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#a3b5c7;
+    font-size:16px;
+}
+
+body.light .hero p{
+    color:#647587;
+}
+
+.email{
+    display:inline-flex;
+    margin-top:15px;
+    color:#70caff;
+    font-size:14px;
+}
+
+.email:hover{
+    color:#fff;
+}
+
+/* BUTTONS */
+
+.hero-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:28px;
+}
+
+.btn{
+    min-height:46px;
+    padding:0 19px;
+    border-radius:13px;
+    border:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-weight:750;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+.btn-primary{
+    color:#fff;
+    background:linear-gradient(135deg,#007bff,#009fe8);
+    box-shadow:0 10px 25px rgba(0,123,255,.20);
+}
+
+.btn-primary:hover{
+    box-shadow:0 14px 32px rgba(0,123,255,.28);
+}
+
+.btn-secondary{
+    color:#d8e7f5;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
+}
+
+body.light .btn-secondary{
+    color:#193047;
+    border-color:rgba(0,50,100,.10);
+    background:#fff;
+}
+
+/* SCROLL */
+
+.scroll-indicator{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#70859c;
+    font-size:9px;
+    letter-spacing:2px;
+    text-align:center;
+}
+
+.mouse{
+    width:20px;
+    height:32px;
+    margin:auto auto 6px;
+    border:1px solid #71879d;
+    border-radius:20px;
+    position:relative;
+}
+
+.mouse::after{
+    content:"";
+    position:absolute;
+    width:3px;
+    height:6px;
+    border-radius:3px;
+    background:#67c9ff;
+    top:6px;
+    left:50%;
+    transform:translateX(-50%);
+    animation:mouse .9s ease-in-out infinite alternate;
+}
+
+@keyframes mouse{
+    to{transform:translate(-50%,8px)}
+}
+
+/* SECTION HEAD */
+
+.section-head{
+    margin-bottom:30px;
+}
+
+.eyebrow{
+    color:#4fc5ff;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.section-head h2{
+    font-size:clamp(29px,5vw,46px);
+    line-height:1.1;
+    letter-spacing:-1.4px;
+}
+
+.section-head p{
+    color:#8ea1b5;
+    max-width:650px;
+    margin-top:10px;
+}
+
+/* REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:
+        opacity .55s ease,
+        transform .55s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.card{
+    position:relative;
+    padding:24px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.045);
+    overflow:hidden;
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+body.light .card{
+    background:rgba(255,255,255,.80);
+    border-color:rgba(0,50,100,.08);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(50,160,255,.30);
+}
+
+.card-icon{
+    width:47px;
+    height:47px;
+    border-radius:13px;
+    display:grid;
+    place-items:center;
+    background:rgba(0,123,255,.11);
+    margin-bottom:17px;
+    font-size:20px;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.card p{
+    color:#8ca0b5;
+    font-size:13px;
+}
+
+/* SOCIAL */
+
+.social-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:11px;
+}
+
+.social{
+    min-height:98px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:17px;
+    background:rgba(255,255,255,.035);
+    transition:.25s ease;
+}
+
+body.light .social{
+    background:#fff;
+    border-color:rgba(0,50,100,.08);
+}
+
+.social:hover{
+    transform:translateY(-5px);
+    border-color:rgba(0,145,255,.28);
+}
+
+.social-icon{
+    font-size:24px;
+}
+
+.social strong{
+    font-size:12px;
+}
+
+.social small{
+    color:#71869b;
+    font-size:9px;
+}
+
+/* PROMOTION */
+
+.promo{
+    position:relative;
+    padding:42px;
+    border-radius:26px;
+    overflow:hidden;
+    border:1px solid rgba(0,150,255,.22);
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(0,170,255,.14),
+            transparent 28%
+        ),
+        rgba(0,110,255,.08);
+}
+
+.promo h2{
+    font-size:clamp(28px,5vw,44px);
+    line-height:1.1;
+    margin-bottom:11px;
+}
+
+.promo p{
+    color:#98abbe;
+    max-width:650px;
+    margin-bottom:18px;
+}
+
+/* PORTFOLIO */
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.portfolio{
+    aspect-ratio:1.35;
+    border-radius:19px;
+    overflow:hidden;
+    position:relative;
+    border:1px solid rgba(255,255,255,.08);
+    background:linear-gradient(135deg,#0c243d,#07121f);
+}
+
+body.light .portfolio{
+    background:linear-gradient(135deg,#dceeff,#f6fbff);
+}
+
+.portfolio-bg{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(0,170,255,.22),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(70,80,255,.18),
+            transparent 25%
+        );
+}
+
+.portfolio-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    padding:19px;
+    background:linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,.78)
+    );
+}
+
+.portfolio h3{
+    font-size:16px;
+}
+
+.portfolio p{
+    color:#94a9bd;
+    font-size:11px;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.stat{
+    padding:25px 12px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    background:rgba(255,255,255,.035);
+}
+
+body.light .stat{
+    background:#fff;
+    border-color:rgba(0,50,100,.08);
+}
+
+.stat strong{
+    display:block;
+    font-size:28px;
+}
+
+.stat span{
+    color:#8094a8;
+    font-size:11px;
+}
+
+/* OFFICIAL */
+
+.account-list{
+    display:grid;
+    gap:10px;
+}
+
+.account{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:15px 17px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.035);
+    transition:.2s ease;
+}
+
+body.light .account{
+    background:#fff;
+    border-color:rgba(0,50,100,.08);
+}
+
+.account:hover{
+    transform:translateX(4px);
+    border-color:rgba(0,145,255,.25);
+}
+
+.account-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.account-icon{
+    width:41px;
+    height:41px;
+    border-radius:11px;
+    display:grid;
+    place-items:center;
+    background:rgba(0,123,255,.10);
+}
+
+.account small{
+    display:block;
+    color:#778ca1;
+    font-size:10px;
+}
+
+.account-arrow{
+    color:#6f8499;
+}
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.contact-box{
+    padding:26px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.035);
+}
+
+body.light .contact-box{
+    background:#fff;
+    border-color:rgba(0,50,100,.08);
+}
+
+.contact-box h3{
+    margin-bottom:7px;
+}
+
+.contact-box p{
+    color:#8da0b4;
+    font-size:13px;
+}
+
+.contact-row{
+    display:flex;
+    gap:11px;
+    align-items:center;
+    margin-top:15px;
+}
+
+.contact-row-icon{
+    width:42px;
+    height:42px;
+    border-radius:11px;
+    display:grid;
+    place-items:center;
+    background:rgba(0,123,255,.10);
+}
+
+/* LEGAL */
+
+.legal{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.legal-box{
+    padding:23px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.07);
+    background:rgba(255,255,255,.03);
+}
+
+body.light .legal-box{
+    background:#fff;
+}
+
+.legal-box h3{
+    margin-bottom:8px;
+}
+
+.legal-box p{
+    color:#8296aa;
+    font-size:12px;
+}
+
+/* SEARCH */
+
+.search-panel{
+    position:fixed;
+    inset:0;
+    z-index:1200;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:90px 16px 25px;
+    background:rgba(0,0,0,.55);
+    opacity:0;
+    visibility:hidden;
+    transition:
+        opacity .18s ease,
+        visibility .18s ease;
+}
+
+.search-panel.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.search-box{
+    width:min(650px,100%);
+    background:#091624;
+    border:1px solid rgba(255,255,255,.11);
+    border-radius:20px;
+    padding:16px;
+    transform:translateY(-12px);
+    transition:transform .2s ease;
+}
+
+body.light .search-box{
+    background:#fff;
+    border-color:rgba(0,50,100,.10);
+}
+
+.search-panel.active .search-box{
+    transform:none;
+}
+
+.search-input{
+    width:100%;
+    padding:14px;
+    border-radius:13px;
+    outline:none;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.055);
+    color:#fff;
+}
+
+body.light .search-input{
+    background:#f4f8fc;
+    color:#111;
+}
+
+.search-input:focus{
+    border-color:#168cff;
+}
+
+.search-results{
+    display:grid;
+    gap:6px;
+    margin-top:10px;
+    max-height:55vh;
+    overflow-y:auto;
+}
+
+.search-result{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:#dce8f4;
+    text-align:left;
+    padding:12px;
+    border-radius:11px;
+    transition:.18s;
+}
+
+body.light .search-result{
+    color:#1c3043;
+}
+
+.search-result:hover{
+    background:rgba(0,123,255,.10);
+}
+
+.search-result small{
+    display:block;
+    color:#74899e;
+    margin-top:2px;
+}
+
+.no-result{
+    color:#7d91a6;
+    padding:12px;
+    font-size:12px;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:1300;
+    display:grid;
+    place-items:center;
+    padding:18px;
+    background:rgba(0,0,0,.60);
+    opacity:0;
+    visibility:hidden;
+    transition:.22s ease;
+}
+
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-box{
+    width:min(650px,100%);
+    max-height:90vh;
+    overflow-y:auto;
+    padding:25px;
+    border-radius:22px;
+    background:#091624;
+    border:1px solid rgba(255,255,255,.10);
+    transform:translateY(15px) scale(.98);
+    transition:.25s ease;
+}
+
+body.light .modal-box{
+    background:#fff;
+    color:#111;
+}
+
+.modal.active .modal-box{
+    transform:none;
+}
+
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    align-items:flex-start;
+    margin-bottom:18px;
+}
+
+.close-btn{
+    width:38px;
+    height:38px;
+    border-radius:11px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.05);
+    color:inherit;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    color:#91a4b8;
+    font-size:11px;
+    font-weight:700;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid rgba(255,255,255,.10);
+    outline:none;
+    border-radius:11px;
+    padding:12px;
+    background:rgba(255,255,255,.055);
+    color:#fff;
+}
+
+body.light .field input,
+body.light .field select,
+body.light .field textarea{
+    color:#111;
+    background:#f5f8fc;
+}
+
+.field textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:#168cff;
+}
+
+.form-actions{
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    z-index:2000;
+    transform:translate(-50%,20px);
+    opacity:0;
+    pointer-events:none;
+    padding:11px 15px;
+    border-radius:11px;
+    background:#102336;
+    border:1px solid rgba(255,255,255,.10);
+    color:#fff;
+    font-size:12px;
+    transition:.25s ease;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+/* SCROLL TOP */
+
+.scroll-top{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:700;
+    width:43px;
+    height:43px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:13px;
+    background:#091827;
+    color:#fff;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:.22s ease;
+}
+
+.scroll-top.show{
+    opacity:1;
+    visibility:visible;
+    transform:none;
+}
+
+body.light .scroll-top{
+    background:#fff;
+    color:#111;
+}
+
+/* FOOTER */
+
+footer{
+    width:min(1120px,calc(100% - 36px));
+    margin:auto;
+    padding:45px 0 30px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+body.light footer{
+    border-color:rgba(0,50,100,.08);
+}
+
+.footer-brand{
+    font-size:18px;
+    font-weight:850;
+}
+
+.footer-text{
+    color:#71869b;
+    font-size:12px;
+    margin-top:6px;
+}
+
+.warning{
+    color:#d2a758;
+    font-size:11px;
+    margin-top:12px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:16px;
+    color:#7890a6;
+    font-size:11px;
+}
+
+.footer-links a:hover{
+    color:#4dbfff;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .social-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .portfolio-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:620px){
+
+    section{
+        width:min(100% - 28px,1120px);
+        padding:72px 0;
+    }
+
+    .top-controls{
+        top:12px;
+        left:12px;
+        right:12px;
+    }
+
+    .icon-btn{
+        width:43px;
+        height:43px;
+    }
+
+    .hero{
+        padding-top:85px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .profile-wrap{
+        width:100px;
+        height:100px;
+    }
+
+    .profile{
+        font-size:36px;
+    }
+
+    .verified{
+        width:26px;
+        height:26px;
+    }
+
+    .cards,
+    .portfolio-grid,
+    .contact-grid,
+    .legal{
+        grid-template-columns:1fr;
+    }
+
+    .social-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .promo{
+        padding:27px 22px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .account{
+        padding:13px;
+    }
+
+    .scroll-indicator{
+        display:none;
+    }
+}
+
+@media(max-width:390px){
+
+    .hero-actions{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.001ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background" aria-hidden="true">
+    <div class="grid"></div>
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+</div>
+
+<!-- TOP CONTROLS -->
+
+<div class="top-controls">
+
+    <div class="top-left">
+
+        <button
+            class="icon-btn"
+            id="menuBtn"
+            aria-label="Open menu"
+            aria-expanded="false"
+            type="button"
+        >
+            <span class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
+
+    </div>
+
+    <div class="top-right">
+
+        <button
+            class="icon-btn"
+            id="searchBtn"
+            aria-label="Search"
+            type="button"
+        >
+            🔎
+        </button>
+
+        <button
+            class="icon-btn"
+            id="languageBtn"
+            aria-label="Switch to Hindi"
+            type="button"
+        >
+            HI
+        </button>
+
+        <button
+            class="icon-btn"
+            id="themeBtn"
+            aria-label="Switch to light mode"
+            type="button"
+        >
+            ☀️
+        </button>
+
+    </div>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div class="overlay" id="overlay"></div>
+
+<!-- SIDE MENU -->
+
+<aside class="side-menu" id="sideMenu">
+
+    <div class="menu-brand">
+
+        <div class="menu-brand-logo">D</div>
+
+        <div>
+            <strong>DailySolidMedia</strong>
+            <small id="menuBrandSubtitle">Official Media Platform</small>
+        </div>
+
+    </div>
+
+    <nav class="menu-links">
+
+        <button class="menu-link active" data-target="home" type="button">
+            <span>⌂</span>
+            <span id="menuHome">Home</span>
+        </button>
+
+        <button class="menu-link" data-target="about" type="button">
+            <span>ℹ</span>
+            <span id="menuAbout">About Us</span>
+        </button>
+
+        <button class="menu-link" data-target="social" type="button">
+            <span>◎</span>
+            <span id="menuSocial">Social Media</span>
+        </button>
+
+        <button class="menu-link" data-target="services" type="button">
+            <span>✦</span>
+            <span id="menuServices">Services</span>
+        </button>
+
+        <button class="menu-link" data-target="promotion" type="button">
+            <span>📢</span>
+            <span id="menuPromotion">Paid Promotion</span>
+        </button>
+
+        <button class="menu-link" data-target="portfolio" type="button">
+            <span>▣</span>
+            <span id="menuPortfolio">Media / Portfolio</span>
+        </button>
+
+        <button class="menu-link" data-target="results" type="button">
+            <span>↗</span>
+            <span id="menuResults">Campaign Results</span>
+        </button>
+
+        <button class="menu-link" data-target="official" type="button">
+            <span>✓</span>
+            <span id="menuOfficial">Official Accounts</span>
+        </button>
+
+        <button class="menu-link" data-target="contact" type="button">
+            <span>✉</span>
+            <span id="menuContact">Contact Us</span>
+        </button>
+
+        <button class="menu-link" data-target="legal" type="button">
+            <span>⚖</span>
+            <span id="menuLegal">Privacy & Terms</span>
+        </button>
+
+    </nav>
+
+</aside>
+
+<!-- SEARCH -->
+
+<div class="search-panel" id="searchPanel">
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search website..."
+            autocomplete="off"
+            aria-label="Search website"
+        >
+
+        <div
+            class="search-results"
+            id="searchResults"
+        ></div>
+
+    </div>
+
+</div>
+
+<!-- PROMOTION MODAL -->
+
+<div class="modal" id="promoModal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <div>
+
+                <div
+                    class="eyebrow"
+                    id="modalEyebrow"
+                >
+                    Business Collaboration
+                </div>
+
+                <h2 id="modalTitle">
+                    Paid Promotion Inquiry
+                </h2>
+
+                <p
+                    id="modalDescription"
+                    style="color:#8297aa;font-size:12px;margin-top:5px;"
+                >
+                    Send your promotion requirement by email.
+                </p>
+
+            </div>
+
+            <button
+                class="close-btn"
+                id="closePromo"
+                type="button"
+                aria-label="Close"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <form id="promoForm">
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label for="formName" id="labelName">Name</label>
+                    <input id="formName" required>
+                </div>
+
+                <div class="field">
+                    <label for="formBrand" id="labelBrand">
+                        Brand / Business
+                    </label>
+                    <input id="formBrand" required>
+                </div>
+
+                <div class="field">
+
+                    <label for="formPlatform" id="labelPlatform">
+                        Platform
+                    </label>
+
+                    <select id="formPlatform" required>
+
+                        <option value="" id="platformSelect">
+                            Select
+                        </option>
+
+                        <option value="Instagram">Instagram</option>
+                        <option value="YouTube">YouTube</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="X">X</option>
+                        <option value="Telegram">Telegram</option>
+                        <option
+                            value="Multiple Platforms"
+                            id="platformMultiple"
+                        >
+                            Multiple Platforms
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="field">
+
+                    <label for="formType" id="labelType">
+                        Promotion Type
+                    </label>
+
+                    <select id="formType" required>
+
+                        <option value="" id="typeSelect">
+                            Select
+                        </option>
+
+                        <option
+                            value="Sponsored Post"
+                            id="typeSponsored"
+                        >
+                            Sponsored Post
+                        </option>
+
+                        <option
+                            value="Story Promotion"
+                            id="typeStory"
+                        >
+                            Story Promotion
+                        </option>
+
+                        <option
+                            value="Video Promotion"
+                            id="typeVideo"
+                        >
+                            Video Promotion
+                        </option>
+
+                        <option
+                            value="Brand Collaboration"
+                            id="typeBrand"
+                        >
+                            Brand Collaboration
+                        </option>
+
+                        <option
+                            value="Other"
+                            id="typeOther"
+                        >
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="field">
+
+                    <label for="formBudget" id="labelBudget">
+                        Budget
+                    </label>
+
+                    <input
+                        id="formBudget"
+                        placeholder="Optional"
+                    >
+
+                </div>
+
+                <div class="field">
+
+                    <label for="formContact" id="labelContact">
+                        Contact
+                    </label>
+
+                    <input
+                        id="formContact"
+                        required
+                        placeholder="Email / Phone"
+                    >
+
+                </div>
+
+                <div class="field full">
+
+                    <label
+                        for="formRequirement"
+                        id="labelRequirement"
+                    >
+                        Requirement
+                    </label>
+
+                    <textarea
+                        id="formRequirement"
+                        required
+                        placeholder="Tell us about your campaign..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="sendInquiryBtn"
+                >
+                    ✉ Send Inquiry
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelPromo"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- MAIN -->
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content reveal">
+
+        <div class="profile-wrap">
+
+            <div class="profile-ring"></div>
+
+            <div class="profile">
+                D
+            </div>
+
+            <div
+                class="verified"
+                aria-label="Verified"
+            >
+                ✓
+            </div>
+
+        </div>
+
+        <div class="badge">
+
+            <span class="badge-dot"></span>
+
+            <span id="heroBadge">
+                OFFICIAL MEDIA PLATFORM
+            </span>
+
+        </div>
+
+        <h1>DailySolidMedia</h1>
+
+        <p id="heroDescription">
+            Official social media presence, media promotion and business
+            collaboration.
+        </p>
+
+        <a
+            class="email"
+            href="mailto:dailysolidmedia@gmail.com"
+        >
+            dailysolidmedia@gmail.com
+        </a>
+
+        <div class="hero-actions">
+
+            <button
+                class="btn btn-primary"
+                id="heroPromo"
+                type="button"
+            >
+                📢 <span id="heroPromoText">Paid Promotion</span>
+            </button>
+
+            <button
+                class="btn btn-secondary"
+                id="shareBtn"
+                type="button"
+            >
+                ↗ <span id="shareText">Share Website</span>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+
+        <div class="mouse"></div>
+
+        <span id="scrollText">SCROLL</span>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-head reveal">
+
+        <div class="eyebrow" id="aboutEyebrow">
+            About Us
+        </div>
+
+        <h2 id="aboutTitle">
+            Built for media & digital collaboration.
+        </h2>
+
+        <p id="aboutDescription">
+            DailySolidMedia brings its official social presence, promotion
+            opportunities and business communication into one simple platform.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <article class="card reveal">
+
+            <div class="card-icon">◎</div>
+
+            <h3 id="aboutCard1Title">
+                Social Presence
+            </h3>
+
+            <p id="aboutCard1Text">
+                Find the official DailySolidMedia social accounts from one place.
+            </p>
+
+        </article>
+
+        <article class="card reveal">
+
+            <div class="card-icon">📢</div>
+
+            <h3 id="aboutCard2Title">
+                Promotion
+            </h3>
+
+            <p id="aboutCard2Text">
+                Businesses and creators can send genuine promotion requirements.
+            </p>
+
+        </article>
+
+        <article class="card reveal">
+
+            <div class="card-icon">🤝</div>
+
+            <h3 id="aboutCard3Title">
+                Collaboration
+            </h3>
+
+            <p id="aboutCard3Text">
+                A direct communication point for media and business collaboration.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- SOCIAL -->
+
+<section id="social">
+
+    <div class="section-head reveal">
+
+        <div class="eyebrow" id="socialEyebrow">
+            Social Media
+        </div>
+
+        <h2 id="socialTitle">
+            Follow DailySolidMedia.
+        </h2>
+
+        <p id="socialDescription">
+            Our official social media accounts are listed below.
+        </p>
+
+    </div>
+
+    <div class="social-grid">
+
+        <a
+            class="social reveal"
+            href="https://www.instagram.com/dailysolidmedia?igsh=cjN0MXRqZDVleDFk"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-icon">◎</div>
+            <strong>Instagram</strong>
+            <small id="instagramAction">Follow</small>
+
+        </a>
+
+        <a
+            class="social reveal"
+            href="https://live.oia.bio/dailysolidmedia"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-icon">▶</div>
+            <strong>YouTube</strong>
+            <small id="youtubeAction">Watch</small>
+
+        </a>
+
+        <a
+            class="social reveal"
+            href="https://www.facebook.com/share/1H7jcQhxrb/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-icon">f</div>
+            <strong>Facebook</strong>
+            <small id="facebookAction">Follow</small>
+
+        </a>
+
+        <a
+            class="social reveal"
+            href="https://x.com/Dailysolidmedia"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-icon">𝕏</div>
+            <strong>X</strong>
+            <small id="xAction">Follow</small>
+
+        </a>
+
+        <a
+            class="social reveal"
+            href="https://t.me/dailysolidmedia"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-icon">➤</div>
+            <strong>Telegram</strong>
+            <small id="telegramAction">Join</small>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="section-head reveal">
+
+        <div class="eyebrow" id="servicesEyebrow">
+            Services
+        </div>
+
+        <h2 id="servicesTitle">
+            Digital media opportunities.
+        </h2>
+
+        <p id="servicesDescription">
+            Services can be offered according to campaign requirements and
+            availability.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <article class="card reveal">
+
+            <div class="card-icon">📱</div>
+
+            <h3 id="service1Title">
+                Social Promotion
+            </h3>
+
+            <p id="service1Text">
+                Promotional opportunities across selected social platforms.
+            </p>
+
+        </article>
+
+        <article class="card reveal">
+
+            <div class="card-icon">🎬</div>
+
+            <h3 id="service2Title">
+                Video Promotion
+            </h3>
+
+            <p id="service2Text">
+                Video-focused promotional collaborations for suitable campaigns.
+            </p>
+
+        </article>
+
+        <article class="card reveal">
+
+            <div class="card-icon">🏷️</div>
+
+            <h3 id="service3Title">
+                Brand Collaboration
+            </h3>
+
+            <p id="service3Text">
+                Business and creator collaboration opportunities.
+            </p>
+
+        </article>
+
+        <article class="card reveal">
+
+            <div class="card-icon">🚀</div>
+
+            <h3 id="service4Title">
+                Campaign Support
+            </h3>
+
+            <p id="service4Text">
+                Promotion planning based on campaign goals and available platforms.
+            </p>
+
+        </article>
+
+        <article class="card reveal">
+
+            <div class="card-icon">📊</div>
+
+            <h3 id="service5Title">
+                Media Reach
+            </h3>
+
+            <p id="service5Text">
+                Campaigns can be discussed according to audience and platform
+                suitability.
+            </p>
+
+        </article>
+
+        <article class="card reveal">
+
+            <div class="card-icon">🤝</div>
+
+            <h3 id="service6Title">
+                Custom Inquiry
+            </h3>
+
+            <p id="service6Text">
+                Have a different requirement? Send the details directly.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- PROMOTION -->
+
+<section id="promotion">
+
+    <div class="promo reveal">
+
+        <div class="eyebrow" id="promotionEyebrow">
+            Paid Promotion
+        </div>
+
+        <h2 id="promotionTitle">
+            Have a brand or campaign?
+        </h2>
+
+        <p id="promotionDescription">
+            Send your requirement, preferred platform, budget and contact details.
+            We can review the inquiry and discuss suitable collaboration.
+        </p>
+
+        <button
+            class="btn btn-primary"
+            id="promoBtn"
+            type="button"
+        >
+            📢 <span id="promoBtnText">Send Promotion Inquiry</span>
+        </button>
+
+    </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+    <div class="section-head reveal">
+
+        <div class="eyebrow" id="portfolioEyebrow">
+            Media / Portfolio
+        </div>
+
+        <h2 id="portfolioTitle">
+            Selected campaign space.
+        </h2>
+
+        <p id="portfolioDescription">
+            Replace these placeholders with your real campaigns, collaborations
+            or media work.
+        </p>
+
+    </div>
+
+    <div class="portfolio-grid">
+
+        <article class="portfolio reveal">
+
+            <div class="portfolio-bg"></div>
+
+            <div class="portfolio-content">
+
+                <div>
+
+                    <h3 id="portfolio1Title">
+                        Campaign Showcase
+                    </h3>
+
+                    <p id="portfolio1Text">
+                        Replace with real campaign
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="portfolio reveal">
+
+            <div class="portfolio-bg"></div>
+
+            <div class="portfolio-content">
+
+                <div>
+
+                    <h3 id="portfolio2Title">
+                        Brand Collaboration
+                    </h3>
+
+                    <p id="portfolio2Text">
+                        Replace with real collaboration
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="portfolio reveal">
+
+            <div class="portfolio-bg"></div>
+
+            <div class="portfolio-content">
+
+                <div>
+
+                    <h3 id="portfolio3Title">
+                        Media Promotion
+                    </h3>
+
+                    <p id="portfolio3Text">
+                        Replace with real promotion
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- RESULTS -->
+
+<section id="results">
+
+    <div class="section-head reveal">
+
+        <div class="eyebrow" id="resultsEyebrow">
+            Campaign Results
+        </div>
+
+        <h2 id="resultsTitle">
+            Verified results only.
+        </h2>
+
+        <p id="resultsDescription">
+            Do not publish numbers until they are real and verified.
+            Replace these placeholders with actual campaign data.
+        </p>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat reveal">
+
+            <strong>—</strong>
+
+            <span id="statCampaigns">
+                Campaigns
+            </span>
+
+        </div>
+
+        <div class="stat reveal">
+
+            <strong>—</strong>
+
+            <span id="statReach">
+                Total Reach
+            </span>
+
+        </div>
+
+        <div class="stat reveal">
+
+            <strong>—</strong>
+
+            <span id="statEngagement">
+                Engagement
+            </span>
+
+        </div>
+
+        <div class="stat reveal">
+
+            <strong>—</strong>
+
+            <span id="statCollaborations">
+                Collaborations
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OFFICIAL -->
+
+<section id="official">
+
+    <div class="section-head reveal">
+
+        <div class="eyebrow" id="officialEyebrow">
+            Official Accounts
+        </div>
+
+        <h2 id="officialTitle">
+            Find us only through these accounts.
+        </h2>
+
+        <p id="officialDescription">
+            Always verify the username or link before contacting an account
+            claiming to represent DailySolidMedia.
+        </p>
+
+    </div>
+
+    <div class="account-list">
+
+        <a
+            class="account reveal"
+            href="https://www.instagram.com/dailysolidmedia?igsh=cjN0MXRqZDVleDFk"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="account-left">
+
+                <div class="account-icon">◎</div>
+
+                <div>
+
+                    <strong>Instagram</strong>
+
+                    <small>@dailysolidmedia</small>
+
+                </div>
+
+            </div>
+
+            <span class="account-arrow">↗</span>
+
+        </a>
+
+        <a
+            class="account reveal"
+            href="https://live.oia.bio/dailysolidmedia"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="account-left">
+
+                <div class="account-icon">▶</div>
+
+                <div>
+
+                    <strong>YouTube</strong>
+
+                    <small>DailySolidMedia</small>
+
+                </div>
+
+            </div>
+
+            <span class="account-arrow">↗</span>
+
+        </a>
+
+        <a
+            class="account reveal"
+            href="https://www.facebook.com/share/1H7jcQhxrb/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="account-left">
+
+                <div class="account-icon">f</div>
+
+                <div>
+
+                    <strong>Facebook</strong>
+
+                    <small>DailySolidMedia</small>
+
+                </div>
+
+            </div>
+
+            <span class="account-arrow">↗</span>
+
+        </a>
+
+        <a
+            class="account reveal"
+            href="https://x.com/Dailysolidmedia"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="account-left">
+
+                <div class="account-icon">𝕏</div>
+
+                <div>
+
+                    <strong>X</strong>
+
+                    <small>@Dailysolidmedia</small>
+
+                </div>
+
+            </div>
+
+            <span class="account-arrow">↗</span>
+
+        </a>
+
+        <a
+            class="account reveal"
+            href="https://t.me/dailysolidmedia"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="account-left">
+
+                <div class="account-icon">➤</div>
+
+                <div>
+
+                    <strong>Telegram</strong>
+
+                    <small>@dailysolidmedia</small>
+
+                </div>
+
+            </div>
+
+            <span class="account-arrow">↗</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-head reveal">
+
+        <div class="eyebrow" id="contactEyebrow">
+            Contact Us
+        </div>
+
+        <h2 id="contactTitle">
+            Let's talk.
+        </h2>
+
+        <p id="contactDescription">
+            For business, promotion or collaboration inquiries, contact us
+            directly.
+        </p>
+
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-box reveal">
+
+            <h3 id="emailTitle">
+                Email
+            </h3>
+
+            <p id="emailDescription">
+                Official business and promotion communication.
+            </p>
+
+            <div class="contact-row">
+
+                <div class="contact-row-icon">✉</div>
+
+                <div>
+
+                    <strong>
+                        dailysolidmedia@gmail.com
+                    </strong>
+
+                    <small
+                        id="officialEmailText"
+                        style="display:block;color:#71869b;"
+                    >
+                        Official email
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+
+                <a
+                    class="btn btn-primary"
+                    href="mailto:dailysolidmedia@gmail.com"
+                >
+                    ✉ <span id="emailUsText">Email Us</span>
+                </a>
+
+                <button
+                    class="btn btn-secondary"
+                    id="copyEmail"
+                    type="button"
+                >
+                    ⧉ <span id="copyEmailText">Copy Email</span>
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="contact-box reveal">
+
+            <h3 id="contactPromoTitle">
+                Paid Promotion
+            </h3>
+
+            <p id="contactPromoDescription">
+                For promotion inquiries, use the structured inquiry form so
+                all important campaign details can be included.
+            </p>
+
+            <button
+                class="btn btn-primary"
+                id="contactPromo"
+                type="button"
+                style="margin-top:18px;"
+            >
+                📢 <span id="contactPromoText">Promotion Inquiry</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LEGAL -->
+
+<section id="legal">
+
+    <div class="section-head reveal">
+
+        <div class="eyebrow" id="legalEyebrow">
+            Legal
+        </div>
+
+        <h2 id="legalTitle">
+            Privacy & Terms.
+        </h2>
+
+    </div>
+
+    <div class="legal">
+
+        <article class="legal-box reveal">
+
+            <h3 id="privacyTitle">
+                Privacy Policy
+            </h3>
+
+            <p id="privacyText">
+                This website is primarily an informational and contact platform.
+                If you submit an inquiry, the information you provide may be used
+                to respond to your request. Do not submit sensitive personal
+                information through this website.
+            </p>
+
+        </article>
+
+        <article class="legal-box reveal">
+
+            <h3 id="termsTitle">
+                Terms & Conditions
+            </h3>
+
+            <p id="termsText">
+                Promotion opportunities are subject to discussion, availability
+                and mutual agreement. Campaign performance cannot be guaranteed
+                unless explicitly agreed in writing. Do not use this website or
+                our accounts for unlawful activity or impersonation.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-brand">
+        DailySolidMedia
+    </div>
+
+    <div
+        class="footer-text"
+        id="footerCopyright"
+    >
+        © 2026 DailySolidMedia. All rights reserved.
+    </div>
+
+    <div
+        class="warning"
+        id="footerWarning"
+    >
+        ⚠️ इसके अलावा हमारा कहीं और कोई Official Account नहीं है।
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#social">Instagram</a>
+        <a href="#social">YouTube</a>
+        <a href="#social">Facebook</a>
+        <a href="#social">X</a>
+        <a href="#social">Telegram</a>
+
+        <a
+            href="#legal"
+            id="footerPrivacy"
+        >
+            Privacy
+        </a>
+
+        <a
+            href="#legal"
+            id="footerTerms"
+        >
+            Terms
+        </a>
+
+    </div>
+
+</footer>
+
+<!-- SCROLL TOP -->
+
+<button
+    class="scroll-top"
+    id="scrollTop"
+    aria-label="Scroll to top"
+    type="button"
+>
+    ↑
+</button>
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+></div>
+
+<script>
+"use strict";
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const body = document.body;
+
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
+const overlay = document.getElementById("overlay");
+
+const searchBtn = document.getElementById("searchBtn");
+const searchPanel = document.getElementById("searchPanel");
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+const languageBtn = document.getElementById("languageBtn");
+const themeBtn = document.getElementById("themeBtn");
+
+const promoModal = document.getElementById("promoModal");
+const heroPromo = document.getElementById("heroPromo");
+const promoBtn = document.getElementById("promoBtn");
+const contactPromo = document.getElementById("contactPromo");
+const closePromo = document.getElementById("closePromo");
+const cancelPromo = document.getElementById("cancelPromo");
+const promoForm = document.getElementById("promoForm");
+
+const shareBtn = document.getElementById("shareBtn");
+const copyEmail = document.getElementById("copyEmail");
+
+const scrollTop = document.getElementById("scrollTop");
+const toast = document.getElementById("toast");
+
+const menuLinks = document.querySelectorAll(".menu-link");
+const revealElements = document.querySelectorAll(".reveal");
+
+/* =========================================================
+   TRANSLATION DATABASE
+========================================================= */
+
+const I18N = {
+
+    en: {
+
+        pageTitle:
+            "DailySolidMedia | Social Media & Promotion",
+
+        pageDescription:
+            "DailySolidMedia - Official social media presence, media promotion and business collaboration.",
+
+        menuBrandSubtitle:
+            "Official Media Platform",
+
+        menuHome:
+            "Home",
+
+        menuAbout:
+            "About Us",
+
+        menuSocial:
+            "Social Media",
+
+        menuServices:
+            "Services",
+
+        menuPromotion:
+            "Paid Promotion",
+
+        menuPortfolio:
+            "Media / Portfolio",
+
+        menuResults:
+            "Campaign Results",
+
+        menuOfficial:
+            "Official Accounts",
+
+        menuContact:
+            "Contact Us",
+
+        menuLegal:
+            "Privacy & Terms",
+
+        searchPlaceholder:
+            "Search website...",
+
+        searchAria:
+            "Search website",
+
+        searchNoResult:
+            "No matching section found.",
+
+        heroBadge:
+            "OFFICIAL MEDIA PLATFORM",
+
+        heroDescription:
+            "Official social media presence, media promotion and business collaboration.",
+
+        heroPromo:
+            "Paid Promotion",
+
+        shareWebsite:
+            "Share Website",
+
+        scroll:
+            "SCROLL",
+
+        aboutEyebrow:
+            "About Us",
+
+        aboutTitle:
+            "Built for media & digital collaboration.",
+
+        aboutDescription:
+            "DailySolidMedia brings its official social presence, promotion opportunities and business communication into one simple platform.",
+
+        aboutCard1Title:
+            "Social Presence",
+
+        aboutCard1Text:
+            "Find the official DailySolidMedia social accounts from one place.",
+
+        aboutCard2Title:
+            "Promotion",
+
+        aboutCard2Text:
+            "Businesses and creators can send genuine promotion requirements.",
+
+        aboutCard3Title:
+            "Collaboration",
+
+        aboutCard3Text:
+            "A direct communication point for media and business collaboration.",
+
+        socialEyebrow:
+            "Social Media",
+
+        socialTitle:
+            "Follow DailySolidMedia.",
+
+        socialDescription:
+            "Our official social media accounts are listed below.",
+
+        follow:
+            "Follow",
+
+        watch:
+            "Watch",
+
+        join:
+            "Join",
+
+        servicesEyebrow:
+            "Services",
+
+        servicesTitle:
+            "Digital media opportunities.",
+
+        servicesDescription:
+            "Services can be offered according to campaign requirements and availability.",
+
+        service1Title:
+            "Social Promotion",
+
+        service1Text:
+            "Promotional opportunities across selected social platforms.",
+
+        service2Title:
+            "Video Promotion",
+
+        service2Text:
+            "Video-focused promotional collaborations for suitable campaigns.",
+
+        service3Title:
+            "Brand Collaboration",
+
+        service3Text:
+            "Business and creator collaboration opportunities.",
+
+        service4Title:
+            "Campaign Support",
+
+        service4Text:
+            "Promotion planning based on campaign goals and available platforms.",
+
+        service5Title:
+            "Media Reach",
+
+        service5Text:
+            "Campaigns can be discussed according to audience and platform suitability.",
+
+        service6Title:
+            "Custom Inquiry",
+
+        service6Text:
+            "Have a different requirement? Send the details directly.",
+
+        promotionEyebrow:
+            "Paid Promotion",
+
+        promotionTitle:
+            "Have a brand or campaign?",
+
+        promotionDescription:
+            "Send your requirement, preferred platform, budget and contact details. We can review the inquiry and discuss suitable collaboration.",
+
+        sendPromotionInquiry:
+            "Send Promotion Inquiry",
+
+        portfolioEyebrow:
+            "Media / Portfolio",
+
+        portfolioTitle:
+            "Selected campaign space.",
+
+        portfolioDescription:
+            "Replace these placeholders with your real campaigns, collaborations or media work.",
+
+        portfolio1Title:
+            "Campaign Showcase",
+
+        portfolio1Text:
+            "Replace with real campaign",
+
+        portfolio2Title:
+            "Brand Collaboration",
+
+        portfolio2Text:
+            "Replace with real collaboration",
+
+        portfolio3Title:
+            "Media Promotion",
+
+        portfolio3Text:
+            "Replace with real promotion",
+
+        resultsEyebrow:
+            "Campaign Results",
+
+        resultsTitle:
+            "Verified results only.",
+
+        resultsDescription:
+            "Do not publish numbers until they are real and verified. Replace these placeholders with actual campaign data.",
+
+        statCampaigns:
+            "Campaigns",
+
+        statReach:
+            "Total Reach",
+
+        statEngagement:
+            "Engagement",
+
+        statCollaborations:
+            "Collaborations",
+
+        officialEyebrow:
+            "Official Accounts",
+
+        officialTitle:
+            "Find us only through these accounts.",
+
+        officialDescription:
+            "Always verify the username or link before contacting an account claiming to represent DailySolidMedia.",
+
+        contactEyebrow:
+            "Contact Us",
+
+        contactTitle:
+            "Let's talk.",
+
+        contactDescription:
+            "For business, promotion or collaboration inquiries, contact us directly.",
+
+        emailTitle:
+            "Email",
+
+        emailDescription:
+            "Official business and promotion communication.",
+
+        officialEmail:
+            "Official email",
+
+        emailUs:
+            "Email Us",
+
+        copyEmail:
+            "Copy Email",
+
+        contactPromoTitle:
+            "Paid Promotion",
+
+        contactPromoDescription:
+            "For promotion inquiries, use the structured inquiry form so all important campaign details can be included.",
+
+        promotionInquiry:
+            "Promotion Inquiry",
+
+        legalEyebrow:
+            "Legal",
+
+        legalTitle:
+            "Privacy & Terms.",
+
+        privacyTitle:
+            "Privacy Policy",
+
+        privacyText:
+            "This website is primarily an informational and contact platform. If you submit an inquiry, the information you provide may be used to respond to your request. Do not submit sensitive personal information through this website.",
+
+        termsTitle:
+            "Terms & Conditions",
+
+        termsText:
+            "Promotion opportunities are subject to discussion, availability and mutual agreement. Campaign performance cannot be guaranteed unless explicitly agreed in writing. Do not use this website or our accounts for unlawful activity or impersonation.",
+
+        footerCopyright:
+            "© 2026 DailySolidMedia. All rights reserved.",
+
+        footerWarning:
+            "⚠️ We do not have any other Official Account apart from these.",
+
+        footerPrivacy:
+            "Privacy",
+
+        footerTerms:
+            "Terms",
+
+        modalEyebrow:
+            "Business Collaboration",
+
+        modalTitle:
+            "Paid Promotion Inquiry",
+
+        modalDescription:
+            "Send your promotion requirement by email.",
+
+        labelName:
+            "Name",
+
+        labelBrand:
+            "Brand / Business",
+
+        labelPlatform:
+            "Platform",
+
+        labelType:
+            "Promotion Type",
+
+        labelBudget:
+            "Budget",
+
+        labelContact:
+            "Contact",
+
+        labelRequirement:
+            "Requirement",
+
+        select:
+            "Select",
+
+        multiplePlatforms:
+            "Multiple Platforms",
+
+        sponsoredPost:
+            "Sponsored Post",
+
+        storyPromotion:
+            "Story Promotion",
+
+        videoPromotion:
+            "Video Promotion",
+
+        brandCollaboration:
+            "Brand Collaboration",
+
+        other:
+            "Other",
+
+        optional:
+            "Optional",
+
+        emailPhone:
+            "Email / Phone",
+
+        campaignPlaceholder:
+            "Tell us about your campaign...",
+
+        sendInquiry:
+            "Send Inquiry",
+
+        cancel:
+            "Cancel",
+
+        close:
+            "Close",
+
+        switchHindi:
+            "Switch to Hindi",
+
+        switchEnglish:
+            "Switch to English",
+
+        switchLight:
+            "Switch to light mode",
+
+        switchDark:
+            "Switch to dark mode",
+
+        openMenu:
+            "Open menu",
+
+        closeMenu:
+            "Close menu",
+
+        scrollToTop:
+            "Scroll to top",
+
+        toastHindi:
+            "Hindi language active",
+
+        toastEnglish:
+            "English language active",
+
+        toastLight:
+            "Light mode enabled",
+
+        toastDark:
+            "Dark mode enabled",
+
+        toastCopied:
+            "Email copied!",
+
+        toastCopyFailed:
+            "Could not copy email.",
+
+        toastLinkCopied:
+            "Website link copied!",
+
+        toastShareUnsupported:
+            "Share is not supported on this browser.",
+
+        toastShareFailed:
+            "Unable to share right now.",
+
+        toastOpeningEmail:
+            "Opening your email app..."
+
+    },
+
+    hi: {
+
+        pageTitle:
+            "DailySolidMedia | सोशल मीडिया और प्रमोशन",
+
+        pageDescription:
+            "DailySolidMedia - ऑफिशियल सोशल मीडिया प्रेजेंस, मीडिया प्रमोशन और बिजनेस कोलैबोरेशन।",
+
+        menuBrandSubtitle:
+            "ऑफिशियल मीडिया प्लेटफॉर्म",
+
+        menuHome:
+            "होम",
+
+        menuAbout:
+            "हमारे बारे में",
+
+        menuSocial:
+            "सोशल मीडिया",
+
+        menuServices:
+            "सेवाएं",
+
+        menuPromotion:
+            "पेड प्रमोशन",
+
+        menuPortfolio:
+            "मीडिया / पोर्टफोलियो",
+
+        menuResults:
+            "कैम्पेन रिजल्ट",
+
+        menuOfficial:
+            "ऑफिशियल अकाउंट्स",
+
+        menuContact:
+            "संपर्क करें",
+
+        menuLegal:
+            "प्राइवेसी और नियम",
+
+        searchPlaceholder:
+            "वेबसाइट खोजें...",
+
+        searchAria:
+            "वेबसाइट खोजें",
+
+        searchNoResult:
+            "कोई मिलती-जुलती सेक्शन नहीं मिली।",
+
+        heroBadge:
+            "ऑफिशियल मीडिया प्लेटफॉर्म",
+
+        heroDescription:
+            "ऑफिशियल सोशल मीडिया प्रेजेंस, मीडिया प्रमोशन और बिजनेस कोलैबोरेशन।",
+
+        heroPromo:
+            "पेड प्रमोशन",
+
+        shareWebsite:
+            "वेबसाइट शेयर करें",
+
+        scroll:
+            "नीचे जाएं",
+
+        aboutEyebrow:
+            "हमारे बारे में",
+
+        aboutTitle:
+            "मीडिया और डिजिटल कोलैबोरेशन के लिए बनाया गया।",
+
+        aboutDescription:
+            "DailySolidMedia अपनी ऑफिशियल सोशल प्रेजेंस, प्रमोशन अवसरों और बिजनेस कम्युनिकेशन को एक आसान प्लेटफॉर्म पर लाता है।",
+
+        aboutCard1Title:
+            "सोशल प्रेजेंस",
+
+        aboutCard1Text:
+            "DailySolidMedia के सभी ऑफिशियल सोशल अकाउंट एक ही जगह से खोजें।",
+
+        aboutCard2Title:
+            "प्रमोशन",
+
+        aboutCard2Text:
+            "बिजनेस और क्रिएटर्स अपनी वास्तविक प्रमोशन जरूरत भेज सकते हैं।",
+
+        aboutCard3Title:
+            "कोलैबोरेशन",
+
+        aboutCard3Text:
+            "मीडिया और बिजनेस कोलैबोरेशन के लिए सीधा कम्युनिकेशन पॉइंट।",
+
+        socialEyebrow:
+            "सोशल मीडिया",
+
+        socialTitle:
+            "DailySolidMedia को फॉलो करें।",
+
+        socialDescription:
+            "हमारे ऑफिशियल सोशल मीडिया अकाउंट नीचे दिए गए हैं।",
+
+        follow:
+            "फॉलो करें",
+
+        watch:
+            "देखें",
+
+        join:
+            "जॉइन करें",
+
+        servicesEyebrow:
+            "सेवाएं",
+
+        servicesTitle:
+            "डिजिटल मीडिया के अवसर।",
+
+        servicesDescription:
+            "सेवाएं कैम्पेन की जरूरत और उपलब्धता के अनुसार दी जा सकती हैं।",
+
+        service1Title:
+            "सोशल प्रमोशन",
+
+        service1Text:
+            "चुने हुए सोशल प्लेटफॉर्म पर प्रमोशनल अवसर।",
+
+        service2Title:
+            "वीडियो प्रमोशन",
+
+        service2Text:
+            "उपयुक्त कैम्पेन के लिए वीडियो आधारित प्रमोशनल कोलैबोरेशन।",
+
+        service3Title:
+            "ब्रांड कोलैबोरेशन",
+
+        service3Text:
+            "बिजनेस और क्रिएटर कोलैबोरेशन के अवसर।",
+
+        service4Title:
+            "कैम्पेन सपोर्ट",
+
+        service4Text:
+            "कैम्पेन के लक्ष्य और उपलब्ध प्लेटफॉर्म के आधार पर प्रमोशन प्लानिंग।",
+
+        service5Title:
+            "मीडिया रीच",
+
+        service5Text:
+            "ऑडियंस और प्लेटफॉर्म की उपयुक्तता के अनुसार कैम्पेन पर चर्चा की जा सकती है।",
+
+        service6Title:
+            "कस्टम इंक्वायरी",
+
+        service6Text:
+            "कोई अलग जरूरत है? उसकी जानकारी सीधे भेजें।",
+
+        promotionEyebrow:
+            "पेड प्रमोशन",
+
+        promotionTitle:
+            "क्या आपके पास ब्रांड या कैम्पेन है?",
+
+        promotionDescription:
+            "अपनी जरूरत, पसंदीदा प्लेटफॉर्म, बजट और संपर्क जानकारी भेजें। हम इंक्वायरी की समीक्षा करके उपयुक्त कोलैबोरेशन पर चर्चा कर सकते हैं।",
+
+        sendPromotionInquiry:
+            "प्रमोशन इंक्वायरी भेजें",
+
+        portfolioEyebrow:
+            "मीडिया / पोर्टफोलियो",
+
+        portfolioTitle:
+            "चुने हुए कैम्पेन के लिए जगह।",
+
+        portfolioDescription:
+            "इन प्लेसहोल्डर्स को अपने वास्तविक कैम्पेन, कोलैबोरेशन या मीडिया कार्य से बदलें।",
+
+        portfolio1Title:
+            "कैम्पेन शोकेस",
+
+        portfolio1Text:
+            "वास्तविक कैम्पेन से बदलें",
+
+        portfolio2Title:
+            "ब्रांड कोलैबोरेशन",
+
+        portfolio2Text:
+            "वास्तविक कोलैबोरेशन से बदलें",
+
+        portfolio3Title:
+            "मीडिया प्रमोशन",
+
+        portfolio3Text:
+            "वास्तविक प्रमोशन से बदलें",
+
+        resultsEyebrow:
+            "कैम्पेन रिजल्ट",
+
+        resultsTitle:
+            "सिर्फ सत्यापित रिजल्ट।",
+
+        resultsDescription:
+            "जब तक नंबर वास्तविक और सत्यापित न हों, उन्हें प्रकाशित न करें। इन प्लेसहोल्डर्स को वास्तविक कैम्पेन डेटा से बदलें।",
+
+        statCampaigns:
+            "कैम्पेन",
+
+        statReach:
+            "कुल रीच",
+
+        statEngagement:
+            "एंगेजमेंट",
+
+        statCollaborations:
+            "कोलैबोरेशन",
+
+        officialEyebrow:
+            "ऑफिशियल अकाउंट्स",
+
+        officialTitle:
+            "हमें केवल इन अकाउंट्स के माध्यम से खोजें।",
+
+        officialDescription:
+            "DailySolidMedia का प्रतिनिधित्व करने वाले किसी अकाउंट से संपर्क करने से पहले यूजरनेम या लिंक को हमेशा सत्यापित करें।",
+
+        contactEyebrow:
+            "संपर्क करें",
+
+        contactTitle:
+            "बात करते हैं।",
+
+        contactDescription:
+            "बिजनेस, प्रमोशन या कोलैबोरेशन इंक्वायरी के लिए सीधे संपर्क करें।",
+
+        emailTitle:
+            "ईमेल",
+
+        emailDescription:
+            "ऑफिशियल बिजनेस और प्रमोशन कम्युनिकेशन।",
+
+        officialEmail:
+            "ऑफिशियल ईमेल",
+
+        emailUs:
+            "ईमेल करें",
+
+        copyEmail:
+            "ईमेल कॉपी करें",
+
+        contactPromoTitle:
+            "पेड प्रमोशन",
+
+        contactPromoDescription:
+            "प्रमोशन इंक्वायरी के लिए स्ट्रक्चर्ड फॉर्म का इस्तेमाल करें, ताकि कैम्पेन की सभी जरूरी जानकारी शामिल की जा सके।",
+
+        promotionInquiry:
+            "प्रमोशन इंक्वायरी",
+
+        legalEyebrow:
+            "कानूनी जानकारी",
+
+        legalTitle:
+            "प्राइवेसी और नियम।",
+
+        privacyTitle:
+            "प्राइवेसी पॉलिसी",
+
+        privacyText:
+            "यह वेबसाइट मुख्य रूप से जानकारी और संपर्क के लिए है। यदि आप इंक्वायरी भेजते हैं, तो आपके द्वारा दी गई जानकारी का उपयोग आपकी रिक्वेस्ट का जवाब देने के लिए किया जा सकता है। इस वेबसाइट के माध्यम से संवेदनशील व्यक्तिगत जानकारी न भेजें।",
+
+        termsTitle:
+            "नियम और शर्तें",
+
+        termsText:
+            "प्रमोशन के अवसर चर्चा, उपलब्धता और आपसी सहमति पर निर्भर करते हैं। जब तक लिखित रूप में स्पष्ट रूप से सहमति न हो, कैम्पेन के प्रदर्शन की गारंटी नहीं दी जा सकती। इस वेबसाइट या हमारे अकाउंट्स का गैरकानूनी गतिविधि या प्रतिरूपण के लिए उपयोग न करें।",
+
+        footerCopyright:
+            "© 2026 DailySolidMedia. सर्वाधिकार सुरक्षित।",
+
+        footerWarning:
+            "⚠️ इन अकाउंट्स के अलावा हमारा कोई अन्य Official Account नहीं है।",
+
+        footerPrivacy:
+            "प्राइवेसी",
+
+        footerTerms:
+            "नियम",
+
+        modalEyebrow:
+            "बिजनेस कोलैबोरेशन",
+
+        modalTitle:
+            "पेड प्रमोशन इंक्वायरी",
+
+        modalDescription:
+            "अपनी प्रमोशन जरूरत ईमेल के माध्यम से भेजें।",
+
+        labelName:
+            "नाम",
+
+        labelBrand:
+            "ब्रांड / बिजनेस",
+
+        labelPlatform:
+            "प्लेटफॉर्म",
+
+        labelType:
+            "प्रमोशन का प्रकार",
+
+        labelBudget:
+            "बजट",
+
+        labelContact:
+            "संपर्क",
+
+        labelRequirement:
+            "जरूरत",
+
+        select:
+            "चुनें",
+
+        multiplePlatforms:
+            "एक से अधिक प्लेटफॉर्म",
+
+        sponsoredPost:
+            "स्पॉन्सर्ड पोस्ट",
+
+        storyPromotion:
+            "स्टोरी प्रमोशन",
+
+        videoPromotion:
+            "वीडियो प्रमोशन",
+
+        brandCollaboration:
+            "ब्रांड कोलैबोरेशन",
+
+        other:
+            "अन्य",
+
+        optional:
+            "वैकल्पिक",
+
+        emailPhone:
+            "ईमेल / फोन",
+
+        campaignPlaceholder:
+            "अपने कैम्पेन के बारे में बताएं...",
+
+        sendInquiry:
+            "इंक्वायरी भेजें",
+
+        cancel:
+            "रद्द करें",
+
+        close:
+            "बंद करें",
+
+        switchHindi:
+            "हिंदी में बदलें",
+
+        switchEnglish:
+            "अंग्रेजी में बदलें",
+
+        switchLight:
+            "लाइट मोड में बदलें",
+
+        switchDark:
+            "डार्क मोड में बदलें",
+
+        openMenu:
+            "मेनू खोलें",
+
+        closeMenu:
+            "मेनू बंद करें",
+
+        scrollToTop:
+            "ऊपर जाएं",
+
+        toastHindi:
+            "हिंदी भाषा सक्रिय",
+
+        toastEnglish:
+            "English भाषा सक्रिय",
+
+        toastLight:
+            "लाइट मोड सक्रिय",
+
+        toastDark:
+            "डार्क मोड सक्रिय",
+
+        toastCopied:
+            "ईमेल कॉपी हो गया!",
+
+        toastCopyFailed:
+            "ईमेल कॉपी नहीं हो सका।",
+
+        toastLinkCopied:
+            "वेबसाइट लिंक कॉपी हो गया!",
+
+        toastShareUnsupported:
+            "इस ब्राउज़र में शेयर सुविधा उपलब्ध नहीं है।",
+
+        toastShareFailed:
+            "अभी शेयर नहीं किया जा सका।",
+
+        toastOpeningEmail:
+            "आपका ईमेल ऐप खोला जा रहा है..."
+
+    }
+
+};
+
+/* =========================================================
+   LANGUAGE STATE
+========================================================= */
+
+let currentLanguage =
+    localStorage.getItem("dsm-language") || "en";
+
+if(
+    currentLanguage !== "en" &&
+    currentLanguage !== "hi"
+){
+    currentLanguage = "en";
+}
+
+/* =========================================================
+   TRANSLATION HELPER
+========================================================= */
+
+function t(key){
+
+    return (
+        I18N[currentLanguage] &&
+        I18N[currentLanguage][key]
+    ) || key;
+
+}
+
+/* =========================================================
+   APPLY LANGUAGE
+========================================================= */
+
+function setText(id,key){
+
+    const element = document.getElementById(id);
+
+    if(!element) return;
+
+    element.textContent = t(key);
+
+}
+
+function applyLanguage(){
+
+    document.documentElement.lang =
+        currentLanguage === "hi" ? "hi" : "en";
+
+    document.title = t("pageTitle");
+
+    const descriptionMeta =
+        document.querySelector('meta[name="description"]');
+
+    if(descriptionMeta){
+        descriptionMeta.setAttribute(
+            "content",
+            t("pageDescription")
+        );
+    }
+
+    /* Menu */
+
+    setText("menuBrandSubtitle","menuBrandSubtitle");
+
+    setText("menuHome","menuHome");
+    setText("menuAbout","menuAbout");
+    setText("menuSocial","menuSocial");
+    setText("menuServices","menuServices");
+    setText("menuPromotion","menuPromotion");
+    setText("menuPortfolio","menuPortfolio");
+    setText("menuResults","menuResults");
+    setText("menuOfficial","menuOfficial");
+    setText("menuContact","menuContact");
+    setText("menuLegal","menuLegal");
+
+    /* Hero */
+
+    setText("heroBadge","heroBadge");
+    setText("heroDescription","heroDescription");
+    setText("heroPromoText","heroPromo");
+    setText("shareText","shareWebsite");
+    setText("scrollText","scroll");
+
+    /* About */
+
+    setText("aboutEyebrow","aboutEyebrow");
+    setText("aboutTitle","aboutTitle");
+    setText("aboutDescription","aboutDescription");
+
+    setText("aboutCard1Title","aboutCard1Title");
+    setText("aboutCard1Text","aboutCard1Text");
+
+    setText("aboutCard2Title","aboutCard2Title");
+    setText("aboutCard2Text","aboutCard2Text");
+
+    setText("aboutCard3Title","aboutCard3Title");
+    setText("aboutCard3Text","aboutCard3Text");
+
+    /* Social */
+
+    setText("socialEyebrow","socialEyebrow");
+    setText("socialTitle","socialTitle");
+    setText("socialDescription","socialDescription");
+
+    setText("instagramAction","follow");
+    setText("youtubeAction","watch");
+    setText("facebookAction","follow");
+    setText("xAction","follow");
+    setText("telegramAction","join");
+
+    /* Services */
+
+    setText("servicesEyebrow","servicesEyebrow");
+    setText("servicesTitle","servicesTitle");
+    setText("servicesDescription","servicesDescription");
+
+    setText("service1Title","service1Title");
+    setText("service1Text","service1Text");
+
+    setText("service2Title","service2Title");
+    setText("service2Text","service2Text");
+
+    setText("service3Title","service3Title");
+    setText("service3Text","service3Text");
+
+    setText("service4Title","service4Title");
+    setText("service4Text","service4Text");
+
+    setText("service5Title","service5Title");
+    setText("service5Text","service5Text");
+
+    setText("service6Title","service6Title");
+    setText("service6Text","service6Text");
+
+    /* Promotion */
+
+    setText("promotionEyebrow","promotionEyebrow");
+    setText("promotionTitle","promotionTitle");
+    setText("promotionDescription","promotionDescription");
+    setText("promoBtnText","sendPromotionInquiry");
+
+    /* Portfolio */
+
+    setText("portfolioEyebrow","portfolioEyebrow");
+    setText("portfolioTitle","portfolioTitle");
+    setText("portfolioDescription","portfolioDescription");
+
+    setText("portfolio1Title","portfolio1Title");
+    setText("portfolio1Text","portfolio1Text");
+
+    setText("portfolio2Title","portfolio2Title");
+    setText("portfolio2Text","portfolio2Text");
+
+    setText("portfolio3Title","portfolio3Title");
+    setText("portfolio3Text","portfolio3Text");
+
+    /* Results */
+
+    setText("resultsEyebrow","resultsEyebrow");
+    setText("resultsTitle","resultsTitle");
+    setText("resultsDescription","resultsDescription");
+
+    setText("statCampaigns","statCampaigns");
+    setText("statReach","statReach");
+    setText("statEngagement","statEngagement");
+    setText("statCollaborations","statCollaborations");
+
+    /* Official */
+
+    setText("officialEyebrow","officialEyebrow");
+    setText("officialTitle","officialTitle");
+    setText("officialDescription","officialDescription");
+
+    /* Contact */
+
+    setText("contactEyebrow","contactEyebrow");
+    setText("contactTitle","contactTitle");
+    setText("contactDescription","contactDescription");
+
+    setText("emailTitle","emailTitle");
+    setText("emailDescription","emailDescription");
+    setText("officialEmailText","officialEmail");
+    setText("emailUsText","emailUs");
+    setText("copyEmailText","copyEmail");
+
+    setText("contactPromoTitle","contactPromoTitle");
+    setText(
+        "contactPromoDescription",
+        "contactPromoDescription"
+    );
+    setText(
+        "contactPromoText",
+        "promotionInquiry"
+    );
+
+    /* Legal */
+
+    setText("legalEyebrow","legalEyebrow");
+    setText("legalTitle","legalTitle");
+
+    setText("privacyTitle","privacyTitle");
+    setText("privacyText","privacyText");
+
+    setText("termsTitle","termsTitle");
+    setText("termsText","termsText");
+
+    /* Footer */
+
+    setText("footerCopyright","footerCopyright");
+    setText("footerWarning","footerWarning");
+    setText("footerPrivacy","footerPrivacy");
+    setText("footerTerms","footerTerms");
+
+    /* Modal */
+
+    setText("modalEyebrow","modalEyebrow");
+    setText("modalTitle","modalTitle");
+    setText("modalDescription","modalDescription");
+
+    setText("labelName","labelName");
+    setText("labelBrand","labelBrand");
+    setText("labelPlatform","labelPlatform");
+    setText("labelType","labelType");
+    setText("labelBudget","labelBudget");
+    setText("labelContact","labelContact");
+    setText("labelRequirement","labelRequirement");
+
+    setText("platformSelect","select");
+    setText("platformMultiple","multiplePlatforms");
+
+    setText("typeSelect","select");
+    setText("typeSponsored","sponsoredPost");
+    setText("typeStory","storyPromotion");
+    setText("typeVideo","videoPromotion");
+    setText("typeBrand","brandCollaboration");
+    setText("typeOther","other");
+
+    setText("sendInquiryBtn","sendInquiry");
+    setText("cancelPromo","cancel");
+
+    /* Placeholders */
+
+    const budget =
+        document.getElementById("formBudget");
+
+    if(budget){
+        budget.placeholder = t("optional");
+    }
+
+    const contact =
+        document.getElementById("formContact");
+
+    if(contact){
+        contact.placeholder = t("emailPhone");
+    }
+
+    const requirement =
+        document.getElementById("formRequirement");
+
+    if(requirement){
+        requirement.placeholder =
+            t("campaignPlaceholder");
+    }
+
+    searchInput.placeholder =
+        t("searchPlaceholder");
+
+    searchInput.setAttribute(
+        "aria-label",
+        t("searchAria")
+    );
+
+    /* Accessibility */
+
+    menuBtn.setAttribute(
+        "aria-label",
+        sideMenu.classList.contains("active")
+        ? t("closeMenu")
+        : t("openMenu")
+    );
+
+    languageBtn.setAttribute(
+        "aria-label",
+        currentLanguage === "en"
+        ? t("switchHindi")
+        : t("switchEnglish")
+    );
+
+    scrollTop.setAttribute(
+        "aria-label",
+        t("scrollToTop")
+    );
+
+    closePromo.setAttribute(
+        "aria-label",
+        t("close")
+    );
+
+    /* Language button shows the language
+       you can switch TO */
+
+    languageBtn.textContent =
+        currentLanguage === "en"
+        ? "हि"
+        : "EN";
+
+    /* Refresh dynamic search results */
+
+    if(searchPanel.classList.contains("active")){
+        renderSearch(searchInput.value);
+    }
+
+}
+
+/* =========================================================
+   MENU
+========================================================= */
+
+function openMenu(){
+
+    sideMenu.classList.add("active");
+    overlay.classList.add("active");
+    menuBtn.classList.add("menu-open");
+
+    menuBtn.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    menuBtn.setAttribute(
+        "aria-label",
+        t("closeMenu")
+    );
+
+    body.classList.add("no-scroll");
+}
+
+function closeMenu(){
+
+    sideMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    menuBtn.classList.remove("menu-open");
+
+    menuBtn.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    menuBtn.setAttribute(
+        "aria-label",
+        t("openMenu")
+    );
+
+    body.classList.remove("no-scroll");
+}
+
+function toggleMenu(){
+
+    if(sideMenu.classList.contains("active")){
+        closeMenu();
+    }else{
+        closeMenu();
+        openMenu();
+    }
+
+}
+
+menuBtn.addEventListener(
+    "click",
+    toggleMenu
+);
+
+overlay.addEventListener(
+    "click",
+    closeMenu
+);
+
+/* =========================================================
+   MENU NAVIGATION
+========================================================= */
+
+menuLinks.forEach(link => {
+
+    link.addEventListener(
+        "click",
+        () => {
+
+            const targetId =
+                link.dataset.target;
+
+            const target =
+                document.getElementById(targetId);
+
+            if(!target) return;
+
+            closeMenu();
+
+            requestAnimationFrame(() => {
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            });
+
+        }
+    );
+
+});
+
+/* =========================================================
+   SEARCH DATABASE
+   Search works in BOTH languages.
+========================================================= */
+
+const searchData = [
+
+    {
+        key:"home",
+        titleKey:"menuHome",
+        descriptionEn:
+            "DailySolidMedia official media platform.",
+        descriptionHi:
+            "DailySolidMedia का ऑफिशियल मीडिया प्लेटफॉर्म।",
+        keywords:[
+            "home",
+            "होम",
+            "homepage",
+            "मुख्य पेज",
+            "main"
+        ],
+        target:"home"
+    },
+
+    {
+        key:"about",
+        titleKey:"menuAbout",
+        descriptionEn:
+            "About DailySolidMedia and digital collaboration.",
+        descriptionHi:
+            "DailySolidMedia और डिजिटल कोलैबोरेशन के बारे में।",
+        keywords:[
+            "about",
+            "about us",
+            "हमारे बारे में",
+            "जानकारी",
+            "परिचय"
+        ],
+        target:"about"
+    },
+
+    {
+        key:"social",
+        titleKey:"menuSocial",
+        descriptionEn:
+            "Instagram, YouTube, Facebook, X and Telegram.",
+        descriptionHi:
+            "Instagram, YouTube, Facebook, X और Telegram।",
+        keywords:[
+            "social",
+            "social media",
+            "सोशल",
+            "सोशल मीडिया",
+            "instagram",
+            "youtube",
+            "facebook",
+            "telegram",
+            "टेलीग्राम",
+            "यूट्यूब"
+        ],
+        target:"social"
+    },
+
+    {
+        key:"services",
+        titleKey:"menuServices",
+        descriptionEn:
+            "Social promotion, video promotion and collaboration.",
+        descriptionHi:
+            "सोशल प्रमोशन, वीडियो प्रमोशन और कोलैबोरेशन।",
+        keywords:[
+            "service",
+            "services",
+            "सेवा",
+            "सेवाएं",
+            "promotion",
+            "प्रमोशन",
+            "video",
+            "वीडियो",
+            "collaboration",
+            "कोलैबोरेशन"
+        ],
+        target:"services"
+    },
+
+    {
+        key:"promotion",
+        titleKey:"menuPromotion",
+        descriptionEn:
+            "Send a business or campaign promotion inquiry.",
+        descriptionHi:
+            "बिजनेस या कैम्पेन प्रमोशन इंक्वायरी भेजें।",
+        keywords:[
+            "paid promotion",
+            "promotion",
+            "promote",
+            "प्रमोशन",
+            "पेड प्रमोशन",
+            "कैम्पेन",
+            "campaign",
+            "business"
+        ],
+        target:"promotion"
+    },
+
+    {
+        key:"portfolio",
+        titleKey:"menuPortfolio",
+        descriptionEn:
+            "Campaign and collaboration portfolio.",
+        descriptionHi:
+            "कैम्पेन और कोलैबोरेशन पोर्टफोलियो।",
+        keywords:[
+            "portfolio",
+            "media",
+            "मीडिया",
+            "पोर्टफोलियो",
+            "campaign",
+            "कैम्पेन",
+            "work",
+            "काम"
+        ],
+        target:"portfolio"
+    },
+
+    {
+        key:"results",
+        titleKey:"menuResults",
+        descriptionEn:
+            "Verified campaign performance results.",
+        descriptionHi:
+            "सत्यापित कैम्पेन प्रदर्शन के रिजल्ट।",
+        keywords:[
+            "result",
+            "results",
+            "campaign results",
+            "रिजल्ट",
+            "कैम्पेन रिजल्ट",
+            "performance",
+            "परफॉर्मेंस",
+            "reach",
+            "रीच",
+            "engagement",
+            "एंगेजमेंट"
+        ],
+        target:"results"
+    },
+
+    {
+        key:"official",
+        titleKey:"menuOfficial",
+        descriptionEn:
+            "Official DailySolidMedia social accounts.",
+        descriptionHi:
+            "DailySolidMedia के ऑफिशियल सोशल अकाउंट्स।",
+        keywords:[
+            "official",
+            "official accounts",
+            "ऑफिशियल",
+            "ऑफिशियल अकाउंट",
+            "accounts",
+            "अकाउंट",
+            "account"
+        ],
+        target:"official"
+    },
+
+    {
+        key:"contact",
+        titleKey:"menuContact",
+        descriptionEn:
+            "Official email and business communication.",
+        descriptionHi:
+            "ऑफिशियल ईमेल और बिजनेस कम्युनिकेशन।",
+        keywords:[
+            "contact",
+            "contact us",
+            "संपर्क",
+            "संपर्क करें",
+            "email",
+            "ईमेल",
+            "business",
+            "बिजनेस"
+        ],
+        target:"contact"
+    },
+
+    {
+        key:"legal",
+        titleKey:"menuLegal",
+        descriptionEn:
+            "Privacy policy and terms and conditions.",
+        descriptionHi:
+            "प्राइवेसी पॉलिसी और नियम व शर्तें।",
+        keywords:[
+            "privacy",
+            "terms",
+            "legal",
+            "privacy policy",
+            "प्राइवेसी",
+            "नियम",
+            "शर्तें",
+            "कानूनी"
+        ],
+        target:"legal"
+    }
+
+];
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function openSearch(){
+
+    searchPanel.classList.add("active");
+    body.classList.add("no-scroll");
+
+    setTimeout(() => {
+        searchInput.focus();
+    },50);
+
+    renderSearch("");
+
+}
+
+function closeSearch(){
+
+    searchPanel.classList.remove("active");
+
+    if(
+        !promoModal.classList.contains("active") &&
+        !sideMenu.classList.contains("active")
+    ){
+        body.classList.remove("no-scroll");
+    }
+
+    searchInput.value = "";
+    searchResults.innerHTML = "";
+
+}
+
+searchBtn.addEventListener(
+    "click",
+    () => {
+
+        if(searchPanel.classList.contains("active")){
+
+            closeSearch();
+
+        }else{
+
+            closeMenu();
+            openSearch();
+
+        }
+
+    }
+);
+
+document
+    .querySelector(".search-box")
+    .addEventListener(
+        "click",
+        event => {
+            event.stopPropagation();
+        }
+    );
+
+searchPanel.addEventListener(
+    "click",
+    event => {
+
+        if(event.target === searchPanel){
+            closeSearch();
+        }
+
+    }
+);
+
+/* =========================================================
+   SEARCH MATCHING
+========================================================= */
+
+function normalizeText(value){
+
+    return String(value || "")
+        .toLocaleLowerCase()
+        .trim();
+
+}
+
+function getSearchText(item){
+
+    const translatedTitle =
+        t(item.titleKey);
+
+    const translatedDescription =
+        currentLanguage === "hi"
+        ? item.descriptionHi
+        : item.descriptionEn;
+
+    return normalizeText(
+        [
+            translatedTitle,
+            translatedDescription,
+            ...item.keywords
+        ].join(" ")
+    );
+
+}
+
+/* =========================================================
+   SEARCH RENDER
+========================================================= */
+
+function renderSearch(query){
+
+    const value =
+        normalizeText(query);
+
+    const matches =
+        searchData.filter(item => {
+
+            if(!value){
+                return true;
+            }
+
+            const searchable =
+                getSearchText(item);
+
+            const queryWords =
+                value.split(/\s+/)
+                    .filter(Boolean);
+
+            return queryWords.every(
+                word =>
+                    searchable.includes(word)
+            );
+
+        });
+
+    if(!matches.length){
+
+        searchResults.innerHTML = "";
+
+        const empty =
+            document.createElement("div");
+
+        empty.className = "no-result";
+
+        empty.textContent =
+            t("searchNoResult");
+
+        searchResults.appendChild(empty);
+
+        return;
+    }
+
+    searchResults.innerHTML = "";
+
+    matches.forEach(item => {
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+
+        button.className =
+            "search-result";
+
+        button.dataset.searchTarget =
+            item.target;
+
+        const title =
+            document.createElement("span");
+
+        title.textContent =
+            t(item.titleKey);
+
+        const description =
+            document.createElement("small");
+
+        description.textContent =
+            currentLanguage === "hi"
+            ? item.descriptionHi
+            : item.descriptionEn;
+
+        button.appendChild(title);
+        button.appendChild(description);
+
+        searchResults.appendChild(button);
+
+    });
+
+}
+
+/* =========================================================
+   SEARCH RESULT CLICK
+========================================================= */
+
+searchResults.addEventListener(
+    "click",
+    event => {
+
+        const button =
+            event.target.closest(
+                "[data-search-target]"
+            );
+
+        if(!button) return;
+
+        const target =
+            document.getElementById(
+                button.dataset.searchTarget
+            );
+
+        closeSearch();
+
+        if(target){
+
+            setTimeout(() => {
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            },30);
+
+        }
+
+    }
+);
+
+searchInput.addEventListener(
+    "input",
+    () => {
+        renderSearch(
+            searchInput.value
+        );
+    }
+);
+
+/* =========================================================
+   LANGUAGE SWITCH
+========================================================= */
+
+applyLanguage();
+
+languageBtn.addEventListener(
+    "click",
+    () => {
+
+        currentLanguage =
+            currentLanguage === "en"
+            ? "hi"
+            : "en";
+
+        localStorage.setItem(
+            "dsm-language",
+            currentLanguage
+        );
+
+        applyLanguage();
+
+        showToast(
+            currentLanguage === "hi"
+            ? t("toastHindi")
+            : t("toastEnglish")
+        );
+
+    }
+);
+
+/* =========================================================
+   THEME
+========================================================= */
+
+let currentTheme =
+    localStorage.getItem("dsm-theme") || "dark";
+
+if(
+    currentTheme !== "dark" &&
+    currentTheme !== "light"
+){
+    currentTheme = "dark";
+}
+
+function applyTheme(){
+
+    const light =
+        currentTheme === "light";
+
+    body.classList.toggle(
+        "light",
+        light
+    );
+
+    themeBtn.textContent =
+        light ? "🌙" : "☀️";
+
+    themeBtn.setAttribute(
+        "aria-label",
+        light
+        ? t("switchDark")
+        : t("switchLight")
+    );
+
+}
+
+applyTheme();
+
+themeBtn.addEventListener(
+    "click",
+    () => {
+
+        currentTheme =
+            currentTheme === "dark"
+            ? "light"
+            : "dark";
+
+        localStorage.setItem(
+            "dsm-theme",
+            currentTheme
+        );
+
+        applyTheme();
+
+        showToast(
+            currentTheme === "light"
+            ? t("toastLight")
+            : t("toastDark")
+        );
+
+    }
+);
+
+/* =========================================================
+   PROMOTION MODAL
+========================================================= */
+
+function openPromo(){
+
+    closeMenu();
+    closeSearch();
+
+    promoModal.classList.add("active");
+
+    body.classList.add("no-scroll");
+
+    setTimeout(() => {
+
+        const firstInput =
+            document.getElementById(
+                "formName"
+            );
+
+        if(firstInput){
+            firstInput.focus();
+        }
+
+    },80);
+
+}
+
+function closePromoModal(){
+
+    promoModal.classList.remove(
+        "active"
+    );
+
+    if(
+        !sideMenu.classList.contains("active") &&
+        !searchPanel.classList.contains("active")
+    ){
+        body.classList.remove(
+            "no-scroll"
+        );
+    }
+
+}
+
+heroPromo.addEventListener(
+    "click",
+    openPromo
+);
+
+promoBtn.addEventListener(
+    "click",
+    openPromo
+);
+
+contactPromo.addEventListener(
+    "click",
+    openPromo
+);
+
+closePromo.addEventListener(
+    "click",
+    closePromoModal
+);
+
+cancelPromo.addEventListener(
+    "click",
+    closePromoModal
+);
+
+promoModal.addEventListener(
+    "click",
+    event => {
+
+        if(event.target === promoModal){
+            closePromoModal();
+        }
+
+    }
+);
+
+/* =========================================================
+   PROMOTION FORM
+========================================================= */
+
+promoForm.addEventListener(
+    "submit",
+    event => {
+
+        event.preventDefault();
+
+        const name =
+            document
+                .getElementById("formName")
+                .value
+                .trim();
+
+        const brand =
+            document
+                .getElementById("formBrand")
+                .value
+                .trim();
+
+        const platform =
+            document
+                .getElementById("formPlatform")
+                .value;
+
+        const type =
+            document
+                .getElementById("formType")
+                .value;
+
+        const budget =
+            document
+                .getElementById("formBudget")
+                .value
+                .trim();
+
+        const contact =
+            document
+                .getElementById("formContact")
+                .value
+                .trim();
+
+        const requirement =
+            document
+                .getElementById("formRequirement")
+                .value
+                .trim();
+
+        const subjectText =
+            currentLanguage === "hi"
+            ? "पेड प्रमोशन इंक्वायरी - " + brand
+            : "Paid Promotion Inquiry - " + brand;
+
+        const subject =
+            encodeURIComponent(
+                subjectText
+            );
+
+        let bodyText;
+
+        if(currentLanguage === "hi"){
+
+            bodyText = `
+नमस्ते DailySolidMedia,
+
+मैं पेड प्रमोशन / बिजनेस कोलैबोरेशन के बारे में चर्चा करना चाहता/चाहती हूं।
+
+नाम: ${name}
+ब्रांड / बिजनेस: ${brand}
+प्लेटफॉर्म: ${platform}
+प्रमोशन का प्रकार: ${type}
+बजट: ${budget || "उल्लेख नहीं किया गया"}
+संपर्क: ${contact}
+
+जरूरत:
+${requirement}
+
+धन्यवाद,
+${name}
+`;
+
+        }else{
+
+            bodyText = `
+Hello DailySolidMedia,
+
+I would like to discuss a paid promotion / business collaboration.
+
+Name: ${name}
+Brand / Business: ${brand}
+Platform: ${platform}
+Promotion Type: ${type}
+Budget: ${budget || "Not specified"}
+Contact: ${contact}
+
+Requirement:
+${requirement}
+
+Regards,
+${name}
+`;
+
+        }
+
+        const mailto =
+            "mailto:dailysolidmedia@gmail.com" +
+            "?subject=" +
+            subject +
+            "&body=" +
+            encodeURIComponent(
+                bodyText
+            );
+
+        window.location.href =
+            mailto;
+
+        showToast(
+            t("toastOpeningEmail")
+        );
+
+        setTimeout(
+            closePromoModal,
+            300
+        );
+
+    }
+);
+
+/* =========================================================
+   SHARE
+========================================================= */
+
+shareBtn.addEventListener(
+    "click",
+    async() => {
+
+        const shareData = {
+
+            title:
+                "DailySolidMedia",
+
+            text:
+                currentLanguage === "hi"
+                ? "DailySolidMedia का ऑफिशियल सोशल मीडिया और प्रमोशन प्लेटफॉर्म।"
+                : "Official DailySolidMedia social media and promotion platform.",
+
+            url:
+                window.location.href
+
+        };
+
+        try{
+
+            if(navigator.share){
+
+                await navigator.share(
+                    shareData
+                );
+
+                return;
+            }
+
+            if(navigator.clipboard){
+
+                await navigator.clipboard.writeText(
+                    window.location.href
+                );
+
+                showToast(
+                    t("toastLinkCopied")
+                );
+
+                return;
+            }
+
+            showToast(
+                t("toastShareUnsupported")
+            );
+
+        }catch(error){
+
+            if(
+                error &&
+                error.name === "AbortError"
+            ){
+                return;
+            }
+
+            showToast(
+                t("toastShareFailed")
+            );
+
+        }
+
+    }
+);
+
+/* =========================================================
+   COPY EMAIL
+========================================================= */
+
+copyEmail.addEventListener(
+    "click",
+    async() => {
+
+        const email =
+            "dailysolidmedia@gmail.com";
+
+        try{
+
+            if(navigator.clipboard){
+
+                await navigator.clipboard.writeText(
+                    email
+                );
+
+                showToast(
+                    t("toastCopied")
+                );
+
+                return;
+            }
+
+            throw new Error(
+                "Clipboard unavailable"
+            );
+
+        }catch(error){
+
+            const temp =
+                document.createElement(
+                    "textarea"
+                );
+
+            temp.value = email;
+
+            temp.style.position =
+                "fixed";
+
+            temp.style.opacity =
+                "0";
+
+            document.body.appendChild(
+                temp
+            );
+
+            temp.select();
+
+            try{
+
+                const success =
+                    document.execCommand(
+                        "copy"
+                    );
+
+                if(success){
+
+                    showToast(
+                        t("toastCopied")
+                    );
+
+                }else{
+
+                    showToast(
+                        t("toastCopyFailed")
+                    );
+
+                }
+
+            }catch{
+
+                showToast(
+                    t("toastCopyFailed")
+                );
+
+            }
+
+            temp.remove();
+
+        }
+
+    }
+);
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    clearTimeout(
+        toastTimer
+    );
+
+    toast.textContent =
+        message;
+
+    toast.classList.add(
+        "show"
+    );
+
+    toastTimer =
+        setTimeout(
+            () => {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            2200
+        );
+
+}
+
+/* =========================================================
+   SCROLL TOP
+========================================================= */
+
+function updateScrollTop(){
+
+    if(window.scrollY > 450){
+
+        scrollTop.classList.add(
+            "show"
+        );
+
+    }else{
+
+        scrollTop.classList.remove(
+            "show"
+        );
+
+    }
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateScrollTop,
+    {
+        passive:true
+    }
+);
+
+scrollTop.addEventListener(
+    "click",
+    () => {
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+);
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+if(
+    "IntersectionObserver" in window
+){
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(
+                    entry => {
+
+                        if(
+                            entry.isIntersecting
+                        ){
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold:.08,
+                rootMargin:
+                    "0px 0px -30px 0px"
+            }
+        );
+
+    revealElements.forEach(
+        element => {
+            observer.observe(
+                element
+            );
+        }
+    );
+
+}else{
+
+    revealElements.forEach(
+        element => {
+            element.classList.add(
+                "visible"
+            );
+        }
+    );
+
+}
+
+/* =========================================================
+   ACTIVE MENU ON SCROLL
+========================================================= */
+
+const sections =
+    [
+        ...document.querySelectorAll(
+            "main section[id]"
+        )
+    ];
+
+const sectionObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(
+                        !entry.isIntersecting
+                    ){
+                        return;
+                    }
+
+                    const id =
+                        entry.target.id;
+
+                    menuLinks.forEach(
+                        link => {
+
+                            link.classList.toggle(
+                                "active",
+                                link.dataset.target === id
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+        },
+        {
+            rootMargin:
+                "-35% 0px -55% 0px",
+            threshold:0
+        }
+    );
+
+sections.forEach(
+    section => {
+        sectionObserver.observe(
+            section
+        );
+    }
+);
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key !== "Escape"
+        ){
+            return;
+        }
+
+        if(
+            promoModal.classList.contains(
+                "active"
+            )
+        ){
+
+            closePromoModal();
+            return;
+
+        }
+
+        if(
+            searchPanel.classList.contains(
+                "active"
+            )
+        ){
+
+            closeSearch();
+            return;
+
+        }
+
+        if(
+            sideMenu.classList.contains(
+                "active"
+            )
+        ){
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+/* =========================================================
+   INITIAL STATE
+========================================================= */
+
+updateScrollTop();
+
+window.addEventListener(
+    "load",
+    () => {
+
+        document
+            .querySelector(
+                ".hero-content"
+            )
+            ?.classList.add(
+                "visible"
+            );
+
+    }
+);
+
+/* =========================================================
+   FOOTER / NORMAL ANCHORS
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(
+        anchor => {
+
+            anchor.addEventListener(
+                "click",
+                event => {
+
+                    const id =
+                        anchor.getAttribute(
+                            "href"
+                        );
+
+                    if(
+                        !id ||
+                        id === "#"
+                    ){
+                        return;
+                    }
+
+                    const target =
+                        document.querySelector(
+                            id
+                        );
+
+                    if(!target){
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    closeMenu();
+
+                    target.scrollIntoView({
+                        behavior:"smooth",
+                        block:"start"
+                    });
+
+                }
+            );
+
+        }
+    );
+
+/* =========================================================
+   FINAL LANGUAGE + THEME APPLY
+========================================================= */
+
+applyLanguage();
+applyTheme();
+
+</script>
+
+</body>
+</html> 
